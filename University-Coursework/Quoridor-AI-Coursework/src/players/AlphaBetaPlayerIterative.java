@@ -1,6 +1,5 @@
 package players;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 import quoridor.GameState2P;
@@ -28,7 +27,7 @@ public class AlphaBetaPlayerIterative extends QuoridorPlayer {
     }
     
     public void setAvailableTime (long time){
-        this.availableTime=availableTime;
+        this.availableTime=time;
     }
     
     public void doMove() {

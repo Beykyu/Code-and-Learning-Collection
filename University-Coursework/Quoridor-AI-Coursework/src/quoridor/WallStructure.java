@@ -13,7 +13,7 @@ public class WallStructure {
     int hashCode = 0;
 
     public WallStructure() {
-        walls = new HashSet();
+        walls = new HashSet<Wall>();
     }
 
     public void addWall(Wall w) {

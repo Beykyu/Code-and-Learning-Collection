@@ -8,7 +8,6 @@ import java.util.Random;
 import java.util.Map.Entry;
 
 import moves.Move;
-import players.QuoridorPlayer;
 import quoridor.GameState2P;
 import quoridor.Quoridor;
 

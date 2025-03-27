@@ -7,7 +7,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 
 import moves.Move;
-import players.QuoridorPlayer;
 import quoridor.GameState2P;
 import quoridor.Quoridor;
 
@@ -20,7 +19,7 @@ public class HeuristicSimulationPlayer extends QuoridorPlayer{
 	public HeuristicSimulationPlayer(GameState2P state, int index, Quoridor game) {
 		super(state, index, game);
 		indexOpponent = (index + 1) % 2;
-		// TODO Auto-generated constructor stub
+		// Todo Auto-generated constructor stub
 	}
 	
 	public void doMove() {

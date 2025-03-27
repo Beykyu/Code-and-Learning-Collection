@@ -294,8 +294,8 @@ public class GameState2P {
                 }
             }
 
-            List<FrontierNode> frontierTop = new ArrayList();
-            List<FrontierNode> frontierBot = new ArrayList();
+            List<FrontierNode> frontierTop = new ArrayList<FrontierNode>();
+            List<FrontierNode> frontierBot = new ArrayList<FrontierNode>();
 
             distanceToTop = new int[height][width];
             distanceToBottom = new int[height][width];
@@ -358,7 +358,7 @@ public class GameState2P {
 
 
     public static List<Move> getLegalMoves(GameState2P state, int index) {
-        List<Move> res = new ArrayList();
+        List<Move> res = new ArrayList<Move>();
         int r = state.row[index];
         int c = state.col[index];
         
@@ -428,8 +428,8 @@ public class GameState2P {
    public double evaluateState(int index) {
        int distToGoal;
        int opponentDistToGoal;
-       int nrWalls;
-       int opponentNrWalls;
+       //int nrWalls;
+       //int opponentNrWalls;
        boolean winning=false;
        boolean losing=false;
        if (index == 0) {
@@ -446,8 +446,8 @@ public class GameState2P {
            }
            distToGoal = distanceToTop[row[0]][col[0]];
            opponentDistToGoal = distanceToBottom[row[1]][col[1]];
-           nrWalls = nrWallsLeft[0];
-           opponentNrWalls = nrWallsLeft[1];
+           //nrWalls = nrWallsLeft[0];
+           //opponentNrWalls = nrWallsLeft[1];
        }
        else {
            if (row[0] == height - 1) //we have lost
@@ -463,8 +463,8 @@ public class GameState2P {
            }
            opponentDistToGoal = distanceToTop[row[0]][col[0]];
            distToGoal = distanceToBottom[row[1]][col[1]];
-           opponentNrWalls = nrWallsLeft[0];
-           nrWalls = nrWallsLeft[1];
+           //opponentNrWalls = nrWallsLeft[0];
+           //nrWalls = nrWallsLeft[1];
        }
        int res =(opponentDistToGoal - distToGoal);
        if(winning)
