@@ -59,7 +59,7 @@ public class turingRun {
 		}
 
 		//Sets the possible transitions of the TM
-		int transitionsNumber = Integer.parseInt(list.get(6));
+		//int transitionsNumber = Integer.parseInt(list.get(6));
 		for (int i = 7; i < fileLength - 3; i++){
 			tm.setNewTransitionString(list.get(i));
 		}
