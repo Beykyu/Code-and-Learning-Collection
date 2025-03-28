@@ -37,7 +37,7 @@ def selection_sort(lst : List[Any], func_comp : Callable[[Any, Any], bool] = asc
     for i in range(len(lst)): #Marks the boundary of the sorted list
         swap_index : int = i #index for the current element considered as the next element in the sorted list
         for j in range(swap_index, len(lst)): #Searches through the unsorted list for next "sorted" element
-            if func_comp(lst[j], lst[swap_index]):
+            if func_comp(lst[j], lst[swap_index]): #Sets the current element as the one to swap if matches the comparison better
                 swap_index = j
         lst[i], lst[swap_index] = lst[swap_index], lst[i]
     return lst

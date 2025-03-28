@@ -1,10 +1,10 @@
 from typing import Any, Callable, List
 
 def ascending(a, b) -> bool:
-    return a > b
+    return a < b
 
 def descending(a , b) -> bool:
-    return a < b
+    return a > b
 
 
 # Bubble Sort Algorithm:
@@ -37,7 +37,7 @@ def bubble_sort(lst : List[Any], comp_func : Callable[[Any, Any], bool] = ascend
     for i in range(len(lst)): #Controls number of passes through the list. Each pass "bubbles up" an element to it's sorted position
         swapped : bool = False #Flag for ending early if there are no swaps as this implies that the list is sorted
         for j in range(len(lst) - i - 1 ): #Inner loop for comparing adjacent elements. Each pass reduces the comparisons needed as the list is more sorted
-            if comp_func(lst[j], lst[j+1]):
+            if not comp_func(lst[j], lst[j+1]):
                 lst[j], lst[j+1] = lst[j+1], lst[j] #Swap elements 
                 swapped = True
         if not swapped:
