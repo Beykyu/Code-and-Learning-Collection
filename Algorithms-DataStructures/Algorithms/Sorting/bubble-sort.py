@@ -7,6 +7,13 @@ def descending(a , b) -> bool:
     return a < b
 
 
+# Bubble Sort Algorithm:
+# Bubble sort repeatedly iterates through the list, comparing adjacent elements and swapping
+# them if they are in the wrong order. 
+# After each pass, one less element needs to be checked since the last elements gradually become sorted.
+# The algorithm includes an optimization where it can stop early if no swaps were needed during a pass,
+# indicating the list is already sorted.
+
 def bubble_sort(lst : List[Any], comp_func : Callable[[Any, Any], bool] = ascending) -> List[Any]:
     """
     Sorts a list using the bubble sort algorithm.
@@ -23,6 +30,9 @@ def bubble_sort(lst : List[Any], comp_func : Callable[[Any, Any], bool] = ascend
         - Best Case: O(n) when list is already sorted
         - Average Case: O(n^2)
         - Worst Case: O(n^2)
+
+    Space Complexity:
+        - O(1) as it sorts in-place
     """
     for i in range(len(lst)): #Controls number of passes through the list. Each pass "bubbles up" an element to it's sorted position
         swapped : bool = False #Flag for ending early if there are no swaps as this implies that the list is sorted
