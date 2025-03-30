@@ -76,6 +76,61 @@ Pass 4: [1, 2, 3, 4, 5]  # 4 swapped with 5
 - In-place: Yes
 - Best for: Small arrays, when memory is limited
 
+## Merge Sort
+
+### How it Works
+1. Divides the array recursively into two halves until size becomes 1
+2. Merges the smaller sorted arrays into new sorted arrays
+3. Continues merging until the entire array is sorted
+4. Uses auxiliary space to merge the sorted subarrays
+
+### Example
+```python
+Initial array: [5, 2, 4, 1, 3]
+
+Divide: [5, 2] [4, 1, 3]
+Divide: [5] [2] [4] [1, 3]
+Divide: [5] [2] [4] [1] [3]
+
+Merge: [2, 5] [1, 4] [3]
+Merge: [2, 5] [1, 3, 4]
+Merge: [1, 2, 3, 4, 5]
+```
+
+### Characteristics
+- Time Complexity: O(n log n) all cases
+- Space Complexity: O(n)
+- Stable: Yes
+- In-place: No
+- Best for: Large datasets, when stable sorting is needed
+
+## Quick Sort
+
+### How it Works
+1. Selects a 'pivot' element from the array
+2. Partitions other elements into two sub-arrays:
+   - Elements less than pivot
+   - Elements greater than pivot
+3. Recursively applies the same process to the sub-arrays
+4. Combines the sorted sub-arrays with the pivot
+
+### Example
+```python
+Initial array: [5, 2, 4, 1, 3]
+
+Choose pivot (3):
+Partition: [2, 1] [3] [5, 4]
+Recursion: [1, 2] [3] [4, 5]
+Result: [1, 2, 3, 4, 5]
+```
+
+### Characteristics
+- Time Complexity: O(n log n) average, O(n²) worst
+- Space Complexity: O(log n)
+- Stable: No
+- In-place: Yes
+- Best for: General-purpose sorting, works well in practice
+
 ## Usage
 Each sorting algorithm can be used with either ascending (default) or descending order:
 
@@ -92,3 +147,5 @@ sorted_list = insertion_sort(my_list, descending)
 - **Insertion Sort**: Use when the array is small or nearly sorted
 - **Bubble Sort**: Rarely used in practice, mainly for educational purposes
 - **Selection Sort**: Use when memory writes are expensive
+- **Merge Sort**: Use when stable sorting is needed and extra space is available
+- **Quick Sort**: Best general-purpose sorting algorithm, efficient in practice
