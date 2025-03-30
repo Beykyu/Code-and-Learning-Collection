@@ -131,6 +131,39 @@ Result: [1, 2, 3, 4, 5]
 - In-place: Yes
 - Best for: General-purpose sorting, works well in practice
 
+## Counting Sort
+
+### How it Works
+1. Creates a count array to store the frequency of each element
+2. Modifies count array to store actual positions of elements
+3. Builds the output array using the count array
+4. Places each element in its sorted position
+
+### Example
+```python
+Initial array: [4, 2, 4, 1, 3]
+Range: 1 to 4 (size of count array: 4)
+
+Count array: [0, 1, 1, 1, 2]   # Frequencies: 1 appears once, 2 once, 3 once, 4 twice
+Count array: [0, 1, 2, 3, 5]   # Cumulative sum to get positions
+
+Building result (right to left):
+- Reading 3: place at position count[3] = 3 - 1 = 2, decrease count[3] to 2
+- Reading 1: place at position count[1] = 1 - 1 = 0, decrease count[1] to 0
+- Reading 4: place at position count[4] = 5 - 1 = 4, decrease count[4] to 4
+- Reading 2: place at position count[2] = 2 - 1 = 1, decrease count[2] to 1
+- Reading 4: place at position count[4] = 4 - 1 = 3, decrease count[4] to 3
+
+Result: [1, 2, 3, 4, 4]
+```
+
+### Characteristics
+- Time Complexity: O(n + k) where k is the range of input
+- Space Complexity: O(k)
+- Stable: Yes
+- In-place: No
+- Best for: Integer sorting with known range, counting frequencies
+
 ## Usage
 Each sorting algorithm can be used with either ascending (default) or descending order:
 
@@ -149,3 +182,4 @@ sorted_list = insertion_sort(my_list, descending)
 - **Selection Sort**: Use when memory writes are expensive
 - **Merge Sort**: Use when stable sorting is needed and extra space is available
 - **Quick Sort**: Best general-purpose sorting algorithm, efficient in practice
+- **Counting Sort**: Use for integer sorting with a known range
