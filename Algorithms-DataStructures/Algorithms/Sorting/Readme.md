@@ -164,6 +164,30 @@ Result: [1, 2, 3, 4, 4]
 - In-place: No
 - Best for: Integer sorting with known range, counting frequencies
 
+## Radix Sort
+
+### How it Works
+1. Finds the maximum number to know the number of digits
+2. Starting from least significant digit (rightmost), performs counting sort on each digit position
+3. Moves to next digit position (left) and repeats counting sort
+4. Continues until all digit positions are processed
+
+### Example
+```python
+Initial array: [170, 45, 75, 90, 802, 24, 2, 66]
+
+Sort by 1's digit: [170, 90, 802, 2, 24, 45, 75, 66]
+Sort by 10's digit: [802, 2, 24, 45, 66, 170, 75, 90]
+Sort by 100's digit: [2, 24, 45, 66, 75, 90, 170, 802]
+```
+
+### Characteristics
+- Time Complexity: O(d * (n + k)) where d is number of digits, n is array size, k is range of values
+- Space Complexity: O(n + k)
+- Stable: Yes
+- In-place: No
+- Best for: Integer sorting when integers have fixed number of digits
+
 ## Usage
 Each sorting algorithm can be used with either ascending (default) or descending order:
 
@@ -183,3 +207,4 @@ sorted_list = insertion_sort(my_list, descending)
 - **Merge Sort**: Use when stable sorting is needed and extra space is available
 - **Quick Sort**: Best general-purpose sorting algorithm, efficient in practice
 - **Counting Sort**: Use for integer sorting with a known range
+- **Radix Sort**: Use for integer sorting when integers have fixed number of digits
