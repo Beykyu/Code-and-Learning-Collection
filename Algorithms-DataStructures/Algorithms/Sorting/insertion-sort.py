@@ -43,6 +43,8 @@ def insertion_sort(lst: List[Any], func_comp : Callable[[Any, Any], bool] = asce
     return lst
 
 def main():
+    for i in range(1,9,3):
+        print (i)
     # Test case 1: Regular integers
     test1 = [43, 123, 73, 123, 74, 23, 62, 73, 13, 8, 1, 45]
     print("Test 1 - Regular integers:")
